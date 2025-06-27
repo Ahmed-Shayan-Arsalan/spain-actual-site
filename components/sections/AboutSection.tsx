@@ -5,17 +5,16 @@ export default function AboutSection() {
     <section id="about" className="py-20 bg-gray-50 scroll-mt-20">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-16 opacity-0 animate-fade-in-up">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">Sobre Nosotros</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-6">About Us</h2>
           <p className="text-xl text-gray-600 leading-relaxed">
-            Somos un equipo de abogados colegiados, especializados en Derecho de Extranjería y Nacionalidad, que hemos
-            desarrollado un sistema innovador para que puedas gestionar tu trámite legal en España de forma 100 % online,
-            sin salir de casa. Nuestro asistente legal digital te permite realizar una consulta gratuita, recibir
-            orientación jurídica adaptada a tu caso, firmar tu contrato profesional de forma segura y enviar toda la
-            documentación desde tu móvil o correo electrónico. Cada expediente es revisado y tramitado por un abogado con
-            experiencia, garantizando asesoramiento real, seguimiento personalizado y plena seguridad legal. Además,
-            hablamos varios idiomas, para que puedas comunicarte con total claridad durante todo el proceso. Combinamos
-            tecnología, experiencia jurídica y cercanía humana para ofrecerte una forma más sencilla, rápida y segura de
-            resolver tus trámites de extranjería.
+            We are a team of qualified lawyers, specialized in Immigration and Nationality Law, who have developed an 
+            innovative system so you can manage your legal procedures in Spain 100% online, without leaving home. 
+            Our digital legal assistant allows you to have a free consultation, receive legal guidance tailored to your 
+            case, sign your professional contract securely and send all documentation from your mobile or email. 
+            Each case is reviewed and processed by an experienced lawyer, guaranteeing real advice, personalized follow-up 
+            and complete legal security. In addition, we speak several languages, so you can communicate with total clarity 
+            throughout the entire process. We combine technology, legal experience and human closeness to offer you a 
+            simpler, faster and safer way to resolve your immigration procedures.
           </p>
         </div>
 

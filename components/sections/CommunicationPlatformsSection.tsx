@@ -64,7 +64,8 @@ export default function CommunicationPlatformsSection() {
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      const cardWidth = 320 + 24 // card width + gap
+      const isMobile = window.innerWidth < 640
+      const cardWidth = isMobile ? 288 + 12 : 320 + 24 // responsive card width + gap
       scrollContainerRef.current.scrollBy({
         left: -cardWidth,
         behavior: 'smooth'
@@ -74,7 +75,8 @@ export default function CommunicationPlatformsSection() {
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      const cardWidth = 320 + 24 // card width + gap
+      const isMobile = window.innerWidth < 640
+      const cardWidth = isMobile ? 288 + 12 : 320 + 24 // responsive card width + gap
       scrollContainerRef.current.scrollBy({
         left: cardWidth,
         behavior: 'smooth'
@@ -100,19 +102,21 @@ export default function CommunicationPlatformsSection() {
     return () => observer.disconnect()
   }, [])
 
-  // Auto-scroll animation to show it's scrollable
+  // Auto-scroll animation to show it's scrollable - Responsive
   useEffect(() => {
     const autoScroll = () => {
       if (scrollContainerRef.current && isAutoScrolling && isVisible) {
         const container = scrollContainerRef.current
+        const isMobile = window.innerWidth < 640
+        const scrollAmount = isMobile ? 150 : 200
         
         // More engaging auto-scroll demonstration
         setTimeout(() => {
-          container.scrollBy({ left: 200, behavior: 'smooth' })
+          container.scrollBy({ left: scrollAmount, behavior: 'smooth' })
         }, 1500)
         
         setTimeout(() => {
-          container.scrollBy({ left: 200, behavior: 'smooth' })
+          container.scrollBy({ left: scrollAmount, behavior: 'smooth' })
         }, 2500)
         
         // Scroll back to start with a flourish
@@ -139,7 +143,7 @@ export default function CommunicationPlatformsSection() {
   }, [])
 
   return (
-    <section id="services" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50 relative overflow-hidden scroll-mt-20">
+    <section id="services" ref={sectionRef} className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50 relative overflow-hidden scroll-mt-20">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="floating-element absolute top-20 left-10 w-32 h-32 bg-blue-100/20 rounded-full blur-xl animate-float-slow"></div>
@@ -147,59 +151,59 @@ export default function CommunicationPlatformsSection() {
         <div className="floating-element absolute top-1/2 left-1/4 w-16 h-16 bg-green-100/20 rounded-full blur-lg animate-float-fast"></div>
       </div>
       
-      <div className="container mx-auto px-6 relative z-10">
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 via-blue-800 to-gray-800 bg-clip-text text-transparent mb-6 animate-gradient">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className={`text-center mb-8 md:mb-16 px-4 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'}`}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-800 via-blue-800 to-gray-800 bg-clip-text text-transparent mb-4 md:mb-6 animate-gradient">
             Communicate with Our Platforms
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed px-2">
             Choose your preferred way to connect with our legal experts
           </p>
-          <div className="mt-4 flex justify-center">
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-pulse"></div>
+          <div className="mt-3 md:mt-4 flex justify-center">
+            <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-pulse"></div>
           </div>
         </div>
 
-        <div className={`relative max-w-6xl mx-auto transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'}`}>
-          {/* Left Scroll Button */}
+        <div className={`relative w-full mx-auto transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'}`}>
+          {/* Left Scroll Button - Hidden on mobile */}
           <Button
             variant="outline"
             size="icon"
-            className={`absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/95 backdrop-blur-md shadow-xl hover:bg-white transition-all duration-500 group ${
+            className={`absolute left-1 sm:left-2 md:left-0 top-1/2 -translate-y-1/2 z-20 bg-white/95 backdrop-blur-md shadow-xl hover:bg-white transition-all duration-500 group hidden sm:flex w-8 h-8 md:w-10 md:h-10 ${
               !canScrollLeft ? 'opacity-50 cursor-not-allowed scale-90' : 'hover:shadow-2xl hover:scale-110'
             }`}
             onClick={scrollLeft}
             disabled={!canScrollLeft}
           >
-            <ChevronLeft className="h-4 w-4 group-hover:animate-bounce-x transition-transform duration-300" />
+            <ChevronLeft className="h-3 w-3 md:h-4 md:w-4 group-hover:animate-bounce-x transition-transform duration-300" />
           </Button>
 
-          {/* Right Scroll Button */}
+          {/* Right Scroll Button - Hidden on mobile */}
           <Button
             variant="outline"
             size="icon"
-            className={`absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/95 backdrop-blur-md shadow-xl hover:bg-white transition-all duration-500 group ${
+            className={`absolute right-1 sm:right-2 md:right-0 top-1/2 -translate-y-1/2 z-20 bg-white/95 backdrop-blur-md shadow-xl hover:bg-white transition-all duration-500 group hidden sm:flex w-8 h-8 md:w-10 md:h-10 ${
               !canScrollRight ? 'opacity-50 cursor-not-allowed scale-90' : 'hover:shadow-2xl hover:scale-110 animate-pulse-gentle'
             }`}
             onClick={scrollRight}
             disabled={!canScrollRight}
           >
-            <ChevronRight className="h-4 w-4 group-hover:animate-bounce-x transition-transform duration-300" />
+            <ChevronRight className="h-3 w-3 md:h-4 md:w-4 group-hover:animate-bounce-x transition-transform duration-300" />
           </Button>
 
-          {/* Horizontal Scrollable Container - Shows exactly 3 cards */}
-          <div className="overflow-hidden px-12">
+          {/* Horizontal Scrollable Container - Responsive */}
+          <div className="overflow-hidden px-4 sm:px-8 md:px-12">
             <div 
               ref={scrollContainerRef}
-              className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory scroll-smooth" 
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', width: 'calc(3 * 320px + 2 * 24px)' }}
+              className="flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory scroll-smooth" 
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {communicationPlatforms.map((platform, index) => {
                 const IconComponent = platform.icon
                 return (
                   <Card 
                     key={platform.id} 
-                    className={`flex-shrink-0 w-80 snap-start hover:shadow-2xl transition-all duration-700 cursor-pointer group border-0 bg-white/70 backdrop-blur-sm hover:bg-white hover:-translate-y-2 hover:rotate-1 ${
+                    className={`flex-shrink-0 w-72 sm:w-80 md:w-80 lg:w-80 snap-start hover:shadow-2xl transition-all duration-700 cursor-pointer group border-0 bg-white/70 backdrop-blur-sm hover:bg-white hover:-translate-y-1 md:hover:-translate-y-2 hover:rotate-0 md:hover:rotate-1 ${
                       isVisible ? `animate-slide-in-up` : 'opacity-0'
                     }`}
                     style={{ 
@@ -207,33 +211,33 @@ export default function CommunicationPlatformsSection() {
                       animationFillMode: 'both'
                     }}
                   >
-                    <CardHeader className="text-center relative overflow-hidden">
+                    <CardHeader className="text-center relative overflow-hidden p-4 md:p-6">
                       {/* Decorative background */}
                       <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       
-                      <div className={`w-16 h-16 ${platform.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 relative z-10 shadow-lg animate-float-gentle`}>
-                        <IconComponent className="w-8 h-8 text-white group-hover:animate-bounce" />
+                      <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 ${platform.color} rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 md:group-hover:scale-125 group-hover:rotate-6 md:group-hover:rotate-12 transition-all duration-500 relative z-10 shadow-lg animate-float-gentle`}>
+                        <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white group-hover:animate-bounce" />
                         {/* Pulsing ring effect */}
                         <div className={`absolute inset-0 ${platform.color} rounded-full animate-ping opacity-20 group-hover:opacity-40`}></div>
                       </div>
                       
-                      <CardTitle className="text-xl font-semibold text-gray-800 group-hover:text-gray-900 transition-colors duration-300 relative z-10">
+                      <CardTitle className="text-lg sm:text-xl font-semibold text-gray-800 group-hover:text-gray-900 transition-colors duration-300 relative z-10">
                         {platform.name}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="relative">
-                      <CardDescription className="text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    <CardContent className="relative p-4 md:p-6">
+                      <CardDescription className="text-sm sm:text-base text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-colors duration-300 mb-4 md:mb-6">
                         {platform.description}
                       </CardDescription>
-                      <div className="mt-6 text-center">
+                      <div className="text-center">
                         <a 
                           href={platform.link}
-                          className={`inline-flex items-center px-6 py-3 ${platform.color} text-white rounded-full hover:scale-105 hover:shadow-lg transition-all duration-300 font-medium group/btn relative overflow-hidden`}
+                          className={`inline-flex items-center px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 text-sm sm:text-base ${platform.color} text-white rounded-full hover:scale-105 hover:shadow-lg transition-all duration-300 font-medium group/btn relative overflow-hidden`}
                         >
                           {/* Button shine effect */}
                           <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
                           <span className="relative z-10">Connect Now</span>
-                          <IconComponent className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300 relative z-10" />
+                          <IconComponent className="w-3 h-3 sm:w-4 sm:h-4 ml-1.5 sm:ml-2 group-hover/btn:translate-x-1 transition-transform duration-300 relative z-10" />
                         </a>
                       </div>
                     </CardContent>
@@ -243,37 +247,54 @@ export default function CommunicationPlatformsSection() {
             </div>
           </div>
 
-          {/* Enhanced Gradient Fade Effects */}
-          <div className="absolute left-12 top-0 bottom-0 w-12 bg-gradient-to-r from-gray-50 via-gray-50/80 to-transparent pointer-events-none z-15"></div>
-          <div className="absolute right-12 top-0 bottom-0 w-12 bg-gradient-to-l from-gray-50 via-gray-50/80 to-transparent pointer-events-none z-15"></div>
+          {/* Enhanced Gradient Fade Effects - Responsive */}
+          <div className="absolute left-4 sm:left-8 md:left-12 top-0 bottom-0 w-6 sm:w-8 md:w-12 bg-gradient-to-r from-gray-50 via-gray-50/80 to-transparent pointer-events-none z-15"></div>
+          <div className="absolute right-4 sm:right-8 md:right-12 top-0 bottom-0 w-6 sm:w-8 md:w-12 bg-gradient-to-l from-gray-50 via-gray-50/80 to-transparent pointer-events-none z-15"></div>
           
-          {/* Interactive Scroll Indicators */}
-          <div className="flex justify-center mt-8 space-x-3">
+          {/* Interactive Scroll Indicators - Responsive */}
+          <div className="flex justify-center mt-6 md:mt-8 space-x-2 md:space-x-3">
             {Array.from({ length: Math.ceil(communicationPlatforms.length / 3) }).map((_, index) => (
               <div 
                 key={index} 
-                className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full hover:scale-125 transition-transform duration-300 cursor-pointer animate-pulse-slow"
+                className="w-2.5 h-2.5 md:w-3 md:h-3 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full hover:scale-125 transition-transform duration-300 cursor-pointer animate-pulse-slow"
                 style={{ animationDelay: `${index * 300}ms` }}
               />
             ))}
           </div>
         </div>
         
-        <div className={`text-center mt-12 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'}`}>
-          <div className="inline-flex items-center space-x-8 text-sm font-medium text-gray-600 bg-white/60 backdrop-blur-sm px-8 py-4 rounded-full shadow-lg">
-            <div className="flex items-center space-x-2">
+        <div className={`text-center mt-8 md:mt-12 px-4 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'}`}>
+          {/* Mobile Layout - Stacked */}
+          <div className="sm:hidden space-y-3">
+            <div className="flex items-center justify-center space-x-2 text-sm font-medium text-gray-600 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
               <span>Available 24/7</span>
             </div>
-            <div className="w-1 h-4 bg-gray-300"></div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center justify-center space-x-2 text-sm font-medium text-gray-600 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
               <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
               <span>Immediate Response</span>
             </div>
-            <div className="w-1 h-4 bg-gray-300"></div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center justify-center space-x-2 text-sm font-medium text-gray-600 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
               <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
               <span>Professional Legal Assistance</span>
+            </div>
+          </div>
+          
+          {/* Desktop Layout - Horizontal */}
+          <div className="hidden sm:inline-flex items-center space-x-4 md:space-x-8 text-sm font-medium text-gray-600 bg-white/60 backdrop-blur-sm px-4 md:px-8 py-3 md:py-4 rounded-full shadow-lg">
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <span className="text-xs sm:text-sm">Available 24/7</span>
+            </div>
+            <div className="w-1 h-3 md:h-4 bg-gray-300"></div>
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+              <span className="text-xs sm:text-sm">Immediate Response</span>
+            </div>
+            <div className="w-1 h-3 md:h-4 bg-gray-300"></div>
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <span className="text-xs sm:text-sm">Professional Legal Assistance</span>
             </div>
           </div>
         </div>
