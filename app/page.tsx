@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { useScrollToSection } from "@/hooks/useScrollToSection"
 import HeroSection from "@/components/sections/HeroSection"
 import AboutSection from "@/components/sections/AboutSection"
-import ChatbotSection from "@/components/sections/ChatbotSection"
+import CommunicationPlatformsSection from "@/components/sections/CommunicationPlatformsSection"
 import TestimonialsSection from "@/components/sections/TestimonialsSection"
 import ContactSection from "@/components/sections/ContactSection"
 import Footer from "@/components/sections/Footer"
@@ -21,7 +21,7 @@ export default function HomePage() {
     <div className="min-h-screen">
       <HeroSection isVisible={isVisible} scrollToSection={scrollToSection} />
       <AboutSection />
-      <ChatbotSection />
+      <CommunicationPlatformsSection />
       <TestimonialsSection />
       <ContactSection scrollToSection={scrollToSection} />
       <Footer scrollToSection={scrollToSection} />
