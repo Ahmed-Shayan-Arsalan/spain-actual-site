@@ -18,14 +18,7 @@ export default function HeroSection({ isVisible, scrollToSection }: HeroSectionP
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/60" />
       </div>
 
-      {/* Our experts label */}
-      <div
-        className={`absolute top-4 left-6 z-10 transition-all duration-1000 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
-        }`}
-      >
-        <div className="bg-gray-600/80 text-white px-3 py-1 text-sm font-medium">Our experts</div>
-      </div>
+
 
       {/* Header */}
       <header
