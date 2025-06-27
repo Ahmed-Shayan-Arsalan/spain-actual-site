@@ -10,7 +10,7 @@ const communicationPlatforms = [
     description: "Get instant answers to your legal questions with our AI-powered chatbot available 24/7",
     icon: MessageCircle,
     color: "bg-blue-600",
-    link: "#chatbot-demo"
+    link: "https://www.extranjer-ia.info/"
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const communicationPlatforms = [
     description: "Connect with our legal experts through Telegram for quick consultations and updates",
     icon: Send,
     color: "bg-sky-500",
-    link: "#telegram-demo"
+    link: "tel:+34623245089"
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const communicationPlatforms = [
     description: "Send us your detailed legal queries via email and get comprehensive responses",
     icon: Mail,
     color: "bg-red-500",
-    link: "#email-demo"
+    link: "mailto:tramites.extranjeria.ils@gmail.com"
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const communicationPlatforms = [
     description: "Follow us on Instagram for legal tips, updates, and direct messaging support",
     icon: Instagram,
     color: "bg-pink-500",
-    link: "#instagram-demo"
+    link: "https://www.instagram.com/inmigracionespana?igsh=dGhrN2V2dm8yajli"
   }
 ]
 
