@@ -5,20 +5,12 @@ import { useRef, useState, useEffect } from "react"
 
 const communicationPlatforms = [
   {
-    id: 1,
-    name: "Chatbot",
-    description: "Get instant answers to your legal questions with our AI-powered chatbot available 24/7",
-    icon: MessageCircle,
-    color: "bg-blue-600",
-    link: "https://www.extranjer-ia.info/"
-  },
-  {
     id: 2,
     name: "Telegram",
     description: "Connect with our legal experts through Telegram for quick consultations and updates",
     icon: Send,
     color: "bg-sky-500",
-    link: "tel:+34623245089"
+    link: "https://t.me/+34922123456"
   },
   {
     id: 3,
@@ -26,7 +18,7 @@ const communicationPlatforms = [
     description: "Send us your detailed legal queries via email and get comprehensive responses",
     icon: Mail,
     color: "bg-red-500",
-    link: "mailto:tramites.extranjeria.ils@gmail.com"
+    link: "#email-demo"
   },
   {
     id: 4,
@@ -34,7 +26,7 @@ const communicationPlatforms = [
     description: "Chat with our legal team on WhatsApp for immediate assistance and consultations",
     icon: Phone,
     color: "bg-green-500",
-    link: "#whatsapp-demo"
+    link: "https://wa.me/34922123456"
   },
   {
     id: 5,
@@ -42,7 +34,7 @@ const communicationPlatforms = [
     description: "Follow us on Instagram for legal tips, updates, and direct messaging support",
     icon: Instagram,
     color: "bg-pink-500",
-    link: "https://www.instagram.com/inmigracionespana?igsh=dGhrN2V2dm8yajli"
+    link: "#instagram-demo"
   }
 ]
 
