@@ -1,11 +1,16 @@
+"use client"
+
+import { useLanguage } from "@/lib/language-context"
+
 interface FooterProps {
   scrollToSection: (sectionId: string) => void
 }
 
 export default function Footer({ scrollToSection }: FooterProps) {
+  const { t } = useLanguage()
   return (
-    <footer className="bg-gray-800 text-white py-12">
-      <div className="container mx-auto px-6">
+    <footer className="bg-gray-800 text-white py-12 w-full overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 w-full max-w-7xl">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="hover:translate-y-1 transition-transform duration-300">
@@ -23,21 +28,20 @@ export default function Footer({ scrollToSection }: FooterProps) {
               </div>
             </div>
             <p className="text-gray-300 text-sm">
-              International Legal Services - Your trusted legal partner in Tenerife, providing expert legal solutions for
-              over 15 years.
+              {t('footer.companyDescription')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold mb-4">Quick Links</h4>
+            <h4 className="font-bold mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
                 <button
                   onClick={() => scrollToSection("about")}
                   className="hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block cursor-pointer"
                 >
-                  About Us
+                  {t('footer.about')}
                 </button>
               </li>
               <li>
@@ -45,7 +49,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   onClick={() => scrollToSection("services")}
                   className="hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block cursor-pointer"
                 >
-                  Services
+                  {t('footer.services')}
                 </button>
               </li>
               <li>
@@ -53,7 +57,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   onClick={() => scrollToSection("contact")}
                   className="hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block cursor-pointer"
                 >
-                  Contact
+                  {t('footer.contact')}
                 </button>
               </li>
               <li>
@@ -61,7 +65,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   href="#"
                   className="hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block"
                 >
-                  Blog
+                  {t('footer.blog')}
                 </a>
               </li>
             </ul>
@@ -69,14 +73,14 @@ export default function Footer({ scrollToSection }: FooterProps) {
 
           {/* Services */}
           <div>
-            <h4 className="font-bold mb-4">Legal Services</h4>
+            <h4 className="font-bold mb-4">{t('footer.legalServices')}</h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
                 <button
                   onClick={() => scrollToSection("services")}
                   className="hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block cursor-pointer"
                 >
-                  Immigration Law
+                  {t('footer.immigration')}
                 </button>
               </li>
               <li>
@@ -84,7 +88,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   onClick={() => scrollToSection("services")}
                   className="hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block cursor-pointer"
                 >
-                  Spanish Nationality
+                  {t('footer.nationality')}
                 </button>
               </li>
               <li>
@@ -92,7 +96,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   onClick={() => scrollToSection("services")}
                   className="hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block cursor-pointer"
                 >
-                  Timeshare Law
+                  {t('footer.timeshare')}
                 </button>
               </li>
               <li>
@@ -100,7 +104,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   onClick={() => scrollToSection("services")}
                   className="hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block cursor-pointer"
                 >
-                  Real Estate Law
+                  {t('footer.realEstate')}
                 </button>
               </li>
             </ul>
@@ -108,18 +112,19 @@ export default function Footer({ scrollToSection }: FooterProps) {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-bold mb-4">Contact Info</h4>
+            <h4 className="font-bold mb-4">{t('footer.contactInfo')}</h4>
             <div className="space-y-2 text-sm text-gray-300">
-              <p>Calle Principal 123</p>
-              <p>38001 Santa Cruz de Tenerife</p>
-              <p>Phone: +34 922 123 456</p>
-              <p>Email: info@internationallegalservices.com</p>
+              <p>{t('footer.address1')}</p>
+              <p>{t('footer.address2')}</p>
+              <p>{t('footer.address3')}</p>
+              <p>{t('footer.phone')}</p>
+              <p>{t('footer.email')}</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-300">
-          <p>&copy; 2024 International Legal Services. All rights reserved.</p>
+          <p>&copy; 2024 International Legal Services. {t('footer.rights')}</p>
         </div>
       </div>
     </footer>

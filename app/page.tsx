@@ -18,7 +18,7 @@ export default function HomePage() {
   }, [])
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full overflow-x-hidden">
       <HeroSection isVisible={isVisible} scrollToSection={scrollToSection} />
       <AboutSection />
       <CommunicationPlatformsSection />

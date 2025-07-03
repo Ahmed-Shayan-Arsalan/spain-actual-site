@@ -63,8 +63,14 @@
   * {
     @apply border-border;
   }
+  html {
+    overflow-x: hidden;
+  }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+    width: 100%;
+    min-width: 320px;
   }
 }
 
@@ -79,6 +85,17 @@
 
   .animate-fade-in-right {
     animation: fadeInRight 1s ease-out forwards;
+  }
+
+  /* Mobile responsive utilities */
+  .container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Prevent horizontal overflow on mobile */
+  .mobile-safe {
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 }
 

@@ -1,37 +1,42 @@
+"use client"
+
 import { Card, CardContent } from "@/components/ui/card"
 import { Star } from "lucide-react"
+import { useLanguage } from "@/lib/language-context"
 
 export default function TestimonialsSection() {
+  const { t } = useLanguage()
+  
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      role: "British Citizen",
-      content: "Excellent service! They helped me obtain my Spanish nationality in record time. Professional, efficient, and always available to answer questions.",
+      name: t('testimonials.client1.name'),
+      role: t('testimonials.client1.role'),
+      content: t('testimonials.client1.text'),
       rating: 5
     },
     {
       id: 2,
-      name: "Michael Schmidt",
-      role: "German Resident",
-      content: "Outstanding representation in my timeshare case. They recovered my full investment and handled everything professionally. Highly recommended!",
+      name: t('testimonials.client2.name'),
+      role: t('testimonials.client2.role'),
+      content: t('testimonials.client2.text'),
       rating: 5
     },
     {
       id: 3,
-      name: "Emma Thompson",
-      role: "Property Buyer",
-      content: "Very knowledgeable team. They guided us through the entire property purchase process and made everything clear and straightforward.",
+      name: t('testimonials.client3.name'),
+      role: t('testimonials.client3.role'),
+      content: t('testimonials.client3.text'),
       rating: 5
     }
   ]
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
+    <section className="py-20 bg-gray-50 w-full overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 w-full max-w-7xl">
         <div className="text-center mb-16 opacity-0 animate-fade-in-up">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">What Our Clients Say</h2>
-          <p className="text-xl text-gray-600">Don't just take our word for it - hear from our satisfied clients</p>
+          <h2 className="text-4xl font-bold text-gray-800 mb-6">{t('testimonials.title')}</h2>
+          <p className="text-xl text-gray-600">{t('testimonials.subtitle')}</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">

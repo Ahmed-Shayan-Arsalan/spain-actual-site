@@ -1,44 +1,48 @@
+"use client"
+
 import { MessageCircle, Send, Mail, Phone, Instagram, ChevronLeft, ChevronRight } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { useRef, useState, useEffect } from "react"
-
-const communicationPlatforms = [
-  {
-    id: 2,
-    name: "Telegram",
-    description: "Connect with our legal experts through Telegram for quick consultations and updates",
-    icon: Send,
-    color: "bg-sky-500",
-    link: "https://t.me/+34922123456"
-  },
-  {
-    id: 3,
-    name: "Email",
-    description: "Send us your detailed legal queries via email and get comprehensive responses",
-    icon: Mail,
-    color: "bg-red-500",
-    link: "#email-demo"
-  },
-  {
-    id: 4,
-    name: "WhatsApp",
-    description: "Chat with our legal team on WhatsApp for immediate assistance and consultations",
-    icon: Phone,
-    color: "bg-green-500",
-    link: "https://wa.me/34922123456"
-  },
-  {
-    id: 5,
-    name: "Instagram",
-    description: "Follow us on Instagram for legal tips, updates, and direct messaging support",
-    icon: Instagram,
-    color: "bg-pink-500",
-    link: "#instagram-demo"
-  }
-]
+import { useLanguage } from "@/lib/language-context"
 
 export default function CommunicationPlatformsSection() {
+  const { t } = useLanguage()
+  
+  const communicationPlatforms = [
+    {
+      id: 2,
+      name: t('communication.telegram.title'),
+      description: t('communication.telegram.description'),
+      icon: Send,
+      color: "bg-sky-500",
+      link: "https://t.me/+34922123456"
+    },
+    {
+      id: 3,
+      name: t('communication.email.title'),
+      description: t('communication.email.description'),
+      icon: Mail,
+      color: "bg-red-500",
+      link: "#email-demo"
+    },
+    {
+      id: 4,
+      name: t('communication.whatsapp.title'),
+      description: t('communication.whatsapp.description'),
+      icon: Phone,
+      color: "bg-green-500",
+      link: "https://wa.me/34922123456"
+    },
+    {
+      id: 5,
+      name: t('communication.instagram.title'),
+      description: t('communication.instagram.description'),
+      icon: Instagram,
+      color: "bg-pink-500",
+      link: "#instagram-demo"
+    }
+  ]
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
@@ -135,7 +139,7 @@ export default function CommunicationPlatformsSection() {
   }, [])
 
   return (
-    <section id="services" ref={sectionRef} className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50 relative overflow-hidden scroll-mt-20">
+    <section id="services" ref={sectionRef} className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50 relative overflow-hidden scroll-mt-20 w-full">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="floating-element absolute top-20 left-10 w-32 h-32 bg-blue-100/20 rounded-full blur-xl animate-float-slow"></div>
@@ -143,13 +147,13 @@ export default function CommunicationPlatformsSection() {
         <div className="floating-element absolute top-1/2 left-1/4 w-16 h-16 bg-green-100/20 rounded-full blur-lg animate-float-fast"></div>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 w-full max-w-7xl">
         <div className={`text-center mb-8 md:mb-16 px-4 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'}`}>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-800 via-blue-800 to-gray-800 bg-clip-text text-transparent mb-4 md:mb-6 animate-gradient">
-            Communicate with Our Platforms
+            {t('communication.title')}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed px-2">
-            Choose your preferred way to connect with our legal experts
+            {t('communication.subtitle')}
           </p>
           <div className="mt-3 md:mt-4 flex justify-center">
             <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-pulse"></div>
@@ -184,10 +188,10 @@ export default function CommunicationPlatformsSection() {
           </Button>
 
           {/* Horizontal Scrollable Container - Responsive */}
-          <div className="overflow-hidden px-4 sm:px-8 md:px-12">
+          <div className="overflow-hidden px-2 sm:px-4 md:px-8 lg:px-12 w-full">
             <div 
               ref={scrollContainerRef}
-              className="flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory scroll-smooth" 
+              className="flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory scroll-smooth w-full" 
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {communicationPlatforms.map((platform, index) => {
