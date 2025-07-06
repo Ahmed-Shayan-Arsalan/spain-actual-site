@@ -103,19 +103,19 @@ export const translations = {
       title: "What Our Clients Say",
       subtitle: "Don't just take our word for it - hear from our satisfied clients",
       client1: {
-        name: "Sarah Johnson",
-        role: "British Citizen",
-        text: "Excellent service! They helped me obtain my Spanish nationality in record time. Professional, efficient, and always available to answer questions."
+        name: "Juan Martínez",
+        role: "Colombian Immigrant",
+        text: "I went through my immigration process with this company and it was incredibly smooth. They explained every step and made me feel secure from Colombia to Spain. Highly recommended for anyone starting a new life here!"
       },
       client2: {
-        name: "Michael Schmidt", 
-        role: "German Resident",
-        text: "Outstanding representation in my timeshare case. They recovered my full investment and handled everything professionally. Highly recommended!"
+        name: "Emily Carter",
+        role: "USA to Spain Resident",
+        text: "Moving from the USA to Spain seemed overwhelming, but this team handled my residency application with great care. The process was fast, transparent, and stress-free. Thank you for making my dream possible!"
       },
       client3: {
-        name: "Emma Thompson",
-        role: "Property Buyer", 
-        text: "Very knowledgeable team. They guided us through the entire property purchase process and made everything clear and straightforward."
+        name: "Ahmed Al-Farsi",
+        role: "Moroccan Expat",
+        text: "As someone from Morocco, I was worried about the paperwork and language barriers. The lawyers here supported me in every aspect of my immigration journey. I now feel at home in Spain thanks to their dedication."
       }
     },
     
@@ -279,19 +279,19 @@ export const translations = {
       title: "Lo Que Dicen Nuestros Clientes",
       subtitle: "No solo tome nuestra palabra: escuche a nuestros clientes satisfechos",
       client1: {
-        name: "Sarah Johnson",
-        role: "Ciudadana Británica",
-        text: "¡Excelente servicio! Me ayudaron a obtener mi nacionalidad española en tiempo récord. Profesionales, eficientes y siempre disponibles para responder preguntas."
+        name: "Juan Martínez",
+        role: "Inmigrante Colombiano",
+        text: "Realicé mi proceso de inmigración con esta empresa y fue increíblemente sencillo. Me explicaron cada paso y me sentí seguro desde Colombia hasta España. ¡Muy recomendados para quienes empiezan una nueva vida aquí!"
       },
       client2: {
-        name: "Michael Schmidt",
-        role: "Residente Alemán", 
-        text: "Representación excepcional en mi caso de multipropiedad. Recuperaron toda mi inversión y manejaron todo profesionalmente. ¡Altamente recomendado!"
+        name: "Emily Carter",
+        role: "Residente de EE.UU. a España",
+        text: "Mudarse de Estados Unidos a España parecía abrumador, pero este equipo gestionó mi solicitud de residencia con mucho cuidado. El proceso fue rápido, transparente y sin estrés. ¡Gracias por hacer posible mi sueño!"
       },
       client3: {
-        name: "Emma Thompson",
-        role: "Compradora de Propiedad",
-        text: "Equipo muy conocedor. Nos guiaron a través de todo el proceso de compra de propiedad e hicieron todo claro y directo."
+        name: "Ahmed Al-Farsi",
+        role: "Expatriado Marroquí",
+        text: "Como alguien de Marruecos, me preocupaba el papeleo y el idioma. Los abogados aquí me apoyaron en cada aspecto de mi proceso migratorio. Ahora me siento en casa en España gracias a su dedicación."
       }
     },
     
