@@ -140,10 +140,6 @@ export const translations = {
         services: {
           immigration: "Immigration Law",
           nationality: "Spanish Nationality",
-          timeshare: "Timeshare Law", 
-          realEstate: "Real Estate Law",
-          family: "Family Law",
-          business: "Business Law",
           other: "Other"
         },
         message: "Message",
@@ -315,11 +311,7 @@ export const translations = {
         selectService: "Seleccionar un servicio",
         services: {
           immigration: "Derecho de Inmigración",
-          nationality: "Nacionalidad Española", 
-          timeshare: "Derecho de Multipropiedad",
-          realEstate: "Derecho Inmobiliario",
-          family: "Derecho de Familia",
-          business: "Derecho Empresarial",
+          nationality: "Nacionalidad Española",
           other: "Otro"
         },
         message: "Mensaje",

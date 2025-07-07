@@ -111,10 +111,6 @@ export default function ContactSection({ scrollToSection }: ContactSectionProps)
                   <option value="">{t('contact.form.selectService')}</option>
                   <option value="immigration">{t('contact.form.services.immigration')}</option>
                   <option value="nationality">{t('contact.form.services.nationality')}</option>
-                  <option value="timeshare">{t('contact.form.services.timeshare')}</option>
-                  <option value="real-estate">{t('contact.form.services.realEstate')}</option>
-                  <option value="family">{t('contact.form.services.family')}</option>
-                  <option value="business">{t('contact.form.services.business')}</option>
                   <option value="other">{t('contact.form.services.other')}</option>
                 </select>
               </div>
