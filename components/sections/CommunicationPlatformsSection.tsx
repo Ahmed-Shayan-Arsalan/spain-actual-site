@@ -24,7 +24,7 @@ export default function CommunicationPlatformsSection() {
       description: t('communication.email.description'),
       icon: Mail,
       color: "bg-red-500",
-      link: "#email-demo"
+      link: "mailto:tramites.extranjeria.ils@gmail.com"
     },
     {
       id: 4,
@@ -40,7 +40,7 @@ export default function CommunicationPlatformsSection() {
       description: t('communication.instagram.description'),
       icon: Instagram,
       color: "bg-pink-500",
-      link: "#instagram-demo"
+      link: "https://www.instagram.com/inmigracionespana?igsh=dGhrN2V2dm8yajli"
     }
   ]
   const scrollContainerRef = useRef<HTMLDivElement>(null)
