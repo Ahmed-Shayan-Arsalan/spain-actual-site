@@ -16,7 +16,7 @@ export default function CommunicationPlatformsSection() {
       description: t('communication.telegram.description'),
       icon: Send,
       color: "bg-sky-500",
-      link: "https://t.me/+34922123456"
+      link: "https://t.me/+34623245089"
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ export default function CommunicationPlatformsSection() {
       description: t('communication.whatsapp.description'),
       icon: Phone,
       color: "bg-green-500",
-      link: "https://wa.me/34922123456"
+      link: "https://wa.me/34623245089"
     },
     {
       id: 5,
@@ -228,11 +228,22 @@ export default function CommunicationPlatformsSection() {
                       <div className="text-center">
                         <a 
                           href={platform.link}
+                          target={platform.link.startsWith('mailto:') ? '_self' : '_blank'}
+                          rel={platform.link.startsWith('mailto:') ? '' : 'noopener noreferrer'}
+                          onClick={platform.link.startsWith('mailto:') ? (e) => {
+                            // Ensure mailto link works by using window.location if needed
+                            if (!window.navigator.userAgent.includes('Chrome') || window.navigator.userAgent.includes('Mobile')) {
+                              e.preventDefault();
+                              window.location.href = platform.link;
+                            }
+                          } : undefined}
                           className={`inline-flex items-center px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 text-sm sm:text-base ${platform.color} text-white rounded-full hover:scale-105 hover:shadow-lg transition-all duration-300 font-medium group/btn relative overflow-hidden`}
                         >
                           {/* Button shine effect */}
                           <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
-                          <span className="relative z-10">Connect Now</span>
+                          <span className="relative z-10">
+                            {platform.link.startsWith('mailto:') ? 'Send Email' : 'Connect Now'}
+                          </span>
                           <IconComponent className="w-3 h-3 sm:w-4 sm:h-4 ml-1.5 sm:ml-2 group-hover/btn:translate-x-1 transition-transform duration-300 relative z-10" />
                         </a>
                       </div>
